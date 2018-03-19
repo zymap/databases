@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yjg.frame.mybatis.MybatisInterface">
+
+    <!--空调面板轮训数据-->
+    <select id="getDevice" resultType="com.yjg.pojo.mybatis.Nyy_org_device">
+        SELECT duid,borg,adn,bfloor,bgroup FROM nyy_org_device_kt
+    </select>
+    <!--空调面板数据插入-->
+    <insert id="insertData" parameterType="com.yjg.pojo.mybatis.Nyy_org_tem_data">
+        INSERT INTO nyy_org_tem_data (duid,cdate,ctime,status,borg,bdevice,tem,modeset,devicestatus,wind,temset)
+         VALUES (#{duid},#{cdate},#{ctime},#{status},#{borg},#{bdevice},#{tem},#{modeset},#{devicestatus},#{wind},#{temset})
+    </insert>
+
+</mapper>

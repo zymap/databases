@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <!--<dataSource type="com.yjg.util.c3p0.C3P0DataSourceFactory">-->
+            <dataSource type="POOLED">
+
+                
+
+                <!--pooled-->
+
+                <property name="driver" value="org.postgresql.Driver"/>
+                <property name="url" value="jdbc:postgresql://localhost:5432/postgres"/>
+                <!--<property name="username" value="dev"/>-->
+                <!--<property name="password" value="jinanDev123@"/>-->
+
+                <property name="username" value="zy"/>
+                <property name="password" value="123456"/>
+
+                <property name="poolMaximumActiveConnections" value="10"/>
+                <property name="poolMaximumIdleConnections" value="5"/>
+                <property name="poolMaximumCheckoutTime" value="1000"/>
+
+
+
+                
+                <!--**********************************************************-->
+                <!--<property name="acquireIncrement" value="2"/>-->
+                <!--&lt;!&ndash;初始化数据库连接池时连接的数量&ndash;&gt;-->
+                <!--<property name="initialPoolSize" value="5"/>-->
+                <!--&lt;!&ndash;数据库连接池中最小的数据库连接数&ndash;&gt;-->
+                <!--<property name="minPoolSize" value="2"/>-->
+                <!--&lt;!&ndash;数据库连接池中最大的数据库连接数&ndash;&gt;-->
+                <!--<property name="maxPoolSize" value="20"/>-->
+                <!--&lt;!&ndash;c3p0数据库连接池可以维护的Statement&ndash;&gt;-->
+                <!--<property name="maxStatements" value="50"/>-->
+                <!--<property name="maxConnectionAge" value="1"/>-->
+                <!--<property name="maxIdleTimeExcessConnections" value="2"/>-->
+                <!--<property name="maxIdleTime" value="5"/>-->
+                <!--&lt;!&ndash;每个连接同时可以使用的Statement个数&ndash;&gt;-->
+                <!--<property name="maxStatementsPerConnection" value="10"/>-->
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="mapper/device-mapper.xml"/>
+    </mappers>
+</configuration>
